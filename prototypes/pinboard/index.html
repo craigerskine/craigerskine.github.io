@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" class="min-h-screen bg-gray-200 bg-fixed" hidden>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Pinboard: Modern Bookmarks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+  <style>
+    /* main menu */
+    .nav-main ul > li:hover > ul,.nav-main ul > li:focus-within > ul { opacity: 1; visibility: visible; --tw-translate-y: 0; }
+
+    /* prototype purposes only */
+    @media (prefers-reduced-motion: no-preference){
+      html { scroll-behavior: smooth; }
+    }
+  </style>
+
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-100 via-transparent to-gray-300 bg-gray-200 bg-fixed text-gray-600 transition-all duration-300">
+
+    <div id="app" class="mx-auto min-h-screen max-w-screen-sm lg:max-w-screen-lg flex flex-col" v-cloak>
+      <header class="p-4 flex items-center">
+        <h1>
+          <a href="./" class="logo flex items-center">
+            <i class="fad fa-fw fa-thumbtack fa-lg text-purple-500 transform -rotate-45"></i>
+            <b class="mx-2 uppercase opacity-50">Pinboard</b>
+          </a>
+        </h1>
+        <nav class="nav-main text-sm flex-1 flex">
+          <ul class="ml-auto w-auto text-sm flex flex-wrap items-center space-x-4">
+            <li v-for="(nav, index) in nav_header" class="group relative">
+              <a :href="nav.link" :class="['py-2 hover:text-blue-800 focus:text-blue-800 block transition duration-300', nav.name == 'Add' || nav.name == 'Account' ? 'text-gray-600' : 'text-blue-500']">
+                <template v-if="nav.ico">
+                  <i :class="'fal fa-fw fa-lg fa-'+ nav.ico"></i>
+                </template>
+                <template v-else>
+                  {{ nav.name }}
+                </template>
+              </a>
+              <ul v-if="nav.sub" class="border-t-2 border-blue-500 w-32 bg-white divide-y divide-black divide-opacity-10 text-xs invisible absolute left-1/2 top-full opacity-0 transition-all duration-300 shadow-xl transform -translate-x-1/2 translate-y-4">
+                <li v-for="(nav_sub, index) in nav.sub" class="text-center">
+                  <a :href="nav_sub.link" class="py-2 px-6 block text-gray-500 hover:bg-gray-100 focus:bg-gray-100 hover:text-gray-900 focus:text-gray-900 transition duration-300">{{ nav_sub.name }}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <!-- tabs -->
+        <nav>
+          <ul class="tabs mb-2 py-8 px-4 text-xs tracking-tight font-bold uppercase flex flex-wrap space-x-4" role="tablist">
+            <li v-for="(tab, index) in tabs" role="presentation">
+              <a :href="tab.link" @click="tabCurrent = tab.link" :class="['text-gray-700 transition duration-300', tabCurrent === tab.link ? '' : 'text-opacity-40']">{{ tab.name }}</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div class="tab-content">
+          <!-- pins -->
+          <section id="content-pins" class="tab-pane" role="tabpanel" v-show="tabCurrent == '#pins'">
+            <article class="lg:flex">
+              <ul class="pins flex-1 space-y-4">
+                <li v-for="(pin, index) in pins" class="group py-6 px-4 flex items-center hover:bg-gray-400 hover:bg-opacity-10 transition duration-300 relative">
+                  <a href="#" @click.prevent="toggleFav(pin, $event)" :class="['block transform transition duration-75', pin.fav ? 'text-yellow-500' : 'text-black opacity-30 -rotate-45']">
+                    <b :class="{'hidden': !pin.fav}">
+                      <i class="fas fa-fw fa-thumbtack"></i>
+                    </b>
+                    <b :class="{'hidden': pin.fav}">
+                      <i class="fal fa-fw fa-thumbtack"></i>
+                    </b>
+                  </a>
+                  <div class="pl-4 flex-1">
+                    <div class="mb-1 flex items-center">
+                      <small v-if="pin.private" class="mr-2"><i class="fad fa-fw fa-sm fa-eye-slash" title="Private"></i></small>
+                      <a :href="pin.link" class="text-blue-500 hover:text-blue-800 focus:text-blue-800 inline-block transition duration-300">{{ pin.name }}</a>
+                    </div>
+                    <small class="mb-1 block text-gray-500" v-if="pin.desc !== ''">{{ pin.desc }}</small>
+                    <ul v-if="pin.tags" class="text-xs flex flex-wrap space-x-2">
+                      <li v-for="(tag, index) in pin.tags"><a :href="tag.link" class="tag text-gray-400 hover:text-gray-900 focus:text-gray-900 transition duration-300">{{ tag.name }}</a></li>
+                    </ul>
+                  </div>
+                  <a href="#" class="opacity-0 group-hover:opacity-100 transition duration-300">
+                    <i class="fal fa-fw fa-edit" title="Edit"></i>
+                  </a>
+                </li>
+              </ul>
+              <hr class="my-6 lg:my-0 lg:mx-6 border-0 lg:w-px h-px lg:h-auto bg-black bg-opacity-10 block" />
+              <aside class="lg:w-1/4">
+                Aside goes here...
+              </aside>
+            </article>
+          </section>
+          <section id="content-pins" class="tab-pane" role="tabpanel" v-show="tabCurrent == '#notes'">
+            <article class="py-6 px-4">Notes..</article>
+          </section>
+          <section id="content-pins" class="tab-pane" role="tabpanel" v-show="tabCurrent == '#popular'">
+            <article class="py-6 px-4">Popular..</article>
+          </section>
+        </div>
+
+        
+      </main>
+      <footer class="mt-auto p-4 text-gray-500 text-xs text-center lg:text-left lg:flex flex-wrap items-center">
+        <ul class="inline-flex flex-wrap space-x-4">
+          <li v-for="(nav, index) in nav_footer"><a :href="nav.link" class="hover:text-gray-900 focus:text-gray-900 hover:underline focus:underline transition duration-300">{{ nav.name }}</a></li>
+        </ul>
+        <p class="lg:ml-auto pt-4 lg:pt-0 text-center lg:text-right">&copy; Nine Fives Software <small class="block">Design provided by <a href="https://craigerskine.com/" class="hover:text-gray-900 focus:text-gray-900 hover:underline focus:underline transition duration-300">Craig Erskine</a></small></p>
+      </footer>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
+  <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
+
+  <script>
+    // vue
+    var app = new Vue({
+      el: '#app',
+      data: {
+        nav_header: [
+          { name: 'Add', link: '#', ico: 'plus-circle', sub: [
+            { name: 'Add URL', link: '#', },
+            { name: 'Add Note', link: '#', },
+          ],},
+          { name: 'Account', link: '#', ico: 'user-circle', sub: [
+            { name: 'Account', link: '#', },
+            { name: 'Help', link: '#', },
+            { name: 'Log Out', link: '#', },
+          ],},
+          
+        ],
+        nav_footer: [
+          { name: 'Terms', link: '#', },
+          { name: 'Privacy', link: '#', },
+          { name: 'About', link: '#', },
+          { name: 'Blog', link: '#', },
+          { name: 'FAQ', link: '#', },
+          { name: 'Resources', link: '#', },
+          { name: 'Security', link: '#', },
+        ],
+        tabCurrent: location.hash || '#pins',
+        tabs: [
+          { name: 'My Pins', link: '#pins'},
+          { name: 'My Notes', link: '#notes'},
+          { name: 'All Popular', link: '#popular'},
+        ],
+        pins: [
+          {
+            name: 'qrayg',
+            link: 'https://qrayg.com/',
+            private: false,
+            fav: false,
+            desc: 'Twitch Streamer, Gamer, Musician, Technophile',
+            tags: [
+              { name: 'Twitch', link: '#', },
+              { name: 'Gaming', link: '#', },
+              { name: 'Music', link: '#', },
+            ],
+          },
+          {
+            name: 'qrayg\'s Office',
+            link: 'https://qrayg.com/rig/',
+            private: false,
+            fav: true,
+            desc: 'Amazing office setup for design, dev, music, gaming, and more...',
+            tags: [
+              { name: 'PC', link: '#', },
+              { name: 'Mac', link: '#', },
+              { name: 'Music', link: '#', },
+            ],
+          },
+          {
+            name: 'Craig Erskine',
+            link: 'https://craigerskine.com/',
+            private: true,
+            fav: false,
+            desc: '',
+            tags: [
+              { name: 'UX', link: '#', },
+            ],
+          },
+        ]
+      },
+      methods: {
+        toggleFav: function(id, e){
+          app.$set(id, 'fav', !id.fav);
+        },
+      }
+    });
+
+    twind.setup({
+      mode: "silent",
+      theme: {
+        extend: {
+          colors: {
+            gray: twindColors.gray,
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+          },
+        },
+      },
+    })
+    twind.tw(() => ({
+      '@global': {
+        ':root [v-cloak]': { '@apply': 'hidden', },
+      }
+    }))
+    twindObserve.observe(document.documentElement);
+    document.documentElement.removeAttribute('hidden');
+  </script>
+
+</body>
+</html>

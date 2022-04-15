@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>GitHub Issues Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" />
+  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-white text-gray-700 text-sm">
+  <header class="h-16 bg-gray-900 flex items-center">
+    <a href="#" class="logo text-white px-8"><i class="fab fa-2x fa-github"></i></a>
+    <input type="text" class="mr-2 py-2 px-3 max-w-xs bg-gray-800 flex-1 rounded focus:shadow-outline" placeholder="Search" />
+    <nav>
+      <ul class="flex">
+        <li class="px-2 text-white font-bold"><a href="#">Pull requests</a></li>
+        <li class="px-2 text-white font-bold"><a href="#">Issues</a></li>
+        <li class="px-2 text-white font-bold"><a href="#">Marketplace</a></li>
+        <li class="px-2 text-white font-bold"><a href="#">Explore</a></li>
+      </ul>
+    </nav>
+    <ul class="util ml-auto px-6 text-white text-lg flex items-center">
+      <li class="px-2"><a href="#"><i class="fas fa-fw fa-bell"></i></a></li>
+      <li class="px-2"><a href="#"><i class="fal fa-fw fa-plus"></i></a></li>
+      <li class="px-2"><a href="#"><i class="fas fa-fw fa-user-circle"></i></a></li>
+    </ul>
+  </header>
+  <main class="p-8 md:flex">
+    <nav class="md:mr-8 md:w-64">
+      <ul class="list-nav leading-loose">
+        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 bg-blue-500 text-white flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-inbox mr-2"></i> Inbox <b class="ml-auto">360</b></a></li>
+        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-bookmark mr-2"></i> Saved <b class="ml-auto hidden">25</b></a></li>
+        <li class="pb-6"><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-check mr-2"></i> Done <b class="ml-auto hidden">25,678</b></a></li>
+        <li>
+          <b class="pt-4 pb-2 px-2 text-gray-500 text-xs font-bold uppercase flex items-center">Filters <button type="button" class="ml-auto text-gray-700"><i class="fas fa-cog"></i></button></b>
+          <ul>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-bullseye-arrow mr-2"></i> Assigned</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-comment mr-2"></i> Participating</a></li>
+          </ul>
+        </li>
+        <li class="pt-4">
+          <b class="pt-4 pb-2 px-2 text-gray-500 text-xs font-bold uppercase flex items-center">Repositories</b>
+          <ul>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="fas fa-fw fa-bed mr-2 text-yellow-500"></i> Blah/Blah</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="fas fa-fw fa-leaf mr-2 text-pink-500"></i> Blah/Blah</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p class="mt-5 border-t py-5 text-xs"><a href="#" class="flex items-center">Manage Notifications <i class="ml-1 fas fa-fw fa-caret-down"></i></a></p>
+    </nav>
+    <section class="md:border-l md:pl-8 flex-1">
+      <div class="mb-4 flex items-center">
+        <div class="list-issues-filter mr-4 flex">
+          <a href="#" class="border py-2 px-4 bg-gray-200 font-bold rounded-l shadow-inner">All</a>
+          <a href="#" class="-ml-px border py-2 px-4 rounded-r">Unread</a>
+        </div>
+        <input type="text" class="border p-2 max-w-md flex-1 rounded shadow-inner focus:shadow-outline" placeholder="is:unread" />
+      </div>
+      <div class="px-4 flex items-center"><label class="flex items-center"><b class="mr-4 w-2 h-2"></b><input type="checkbox" class="mr-2" /> Select all</label></div>
+      <ul class="list-issues pb-4">
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">System Reorg</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-branch text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">HelperApp Addition</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-merge text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">Suggestion: Use better code</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">Installation Script Rewrite</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">Feature Request: Make it better</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">Update Problems</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+        <li class="p-4 flex items-center hover:bg-gray-200 rounded">
+          <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
+          <label class="mr-4 flex items-center"><input type="checkbox" /></label>
+          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <div class="mr-4 flex-1">
+            <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
+            <p class="text-lg font-bold leading-tight">Unable to install application into system folder</p>
+          </div>
+          <ul class="text-xs flex items-center">
+            <li class="mr-4">+1</li>
+            <li class="mr-4 px-2 bg-gray-400 rounded">Subscribed</li>
+            <li class="mr-4 flex"><i class="mr-1 w-1 h-6 bg-gray-300 block rounded-sm"></i> <i class="w-6 h-6 bg-gray-400 block rounded-sm"></i></li>
+            <li>10 hours ago</li>
+          </ul>
+        </li>
+        <li class="my-2 h-px bg-gray-300"></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+  <script>
+    $(function(){
+      $('.list-issues-filter a').on('click', function(e){
+        e.preventDefault();
+        $('.list-issues-filter a').removeClass('bg-gray-200 font-bold');
+        $(this).addClass('bg-gray-200 font-bold');
+      });
+      $('.list-nav a').on('click', function(e){
+        e.preventDefault();
+        $('.list-nav a').removeClass('bg-blue-500 text-white').find('b').addClass('hidden');
+        $(this).addClass('bg-blue-500 text-white').find('b').removeClass('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

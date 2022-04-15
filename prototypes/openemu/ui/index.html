@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" class="bg-black min-h-screen" hidden>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>OpenEmu App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="https://unpkg.com/bootstrap-select@1/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+</head>
+<body class="py-16 px-4 min-h-screen bg-b-25 text-gray-100 text-sm leading-tight">
+
+  <div class="window mx-auto max-w-4xl rounded overflow-hidden shadow-xl">
+
+    <div class="mast p-2 bg-gray-800 flex flex-wrap items-center">
+      <div class="mast-gadgets w-1/4 flex items-center">
+        <b class="w-3 h-3 rounded-full bg-red-500"></b>
+        <b class="mx-2 w-3 h-3 rounded-full bg-yellow-500"></b>
+        <b class="w-3 h-3 rounded-full bg-green-500"></b>
+      </div>
+      <div class="mast-toolbar w-full text-gray-400 flex-1 flex items-center">
+        <div class="flex-1 flex">
+          <div class="btn-group space-x-2 text-gray-400 flex">
+            <button type="button" class="grid-list-btn active p-1 px-2 rounded" data-target="#data-grid-th" data-toggle="tab"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="fill-current"><path fill-rule="evenodd" d="M9,11 C9.55228475,11 10,11.4477153 10,12 L10,14 C10,14.5522847 9.55228475,15 9,15 L7,15 C6.44771525,15 6,14.5522847 6,14 L6,12 C6,11.4477153 6.44771525,11 7,11 L9,11 Z M4,11 C4.55228475,11 5,11.4477153 5,12 L5,14 C5,14.5522847 4.55228475,15 4,15 L2,15 C1.44771525,15 1,14.5522847 1,14 L1,12 C1,11.4477153 1.44771525,11 2,11 L4,11 Z M14,11 C14.5522847,11 15,11.4477153 15,12 L15,14 C15,14.5522847 14.5522847,15 14,15 L12,15 C11.4477153,15 11,14.5522847 11,14 L11,12 C11,11.4477153 11.4477153,11 12,11 L14,11 Z M9,6 C9.55228475,6 10,6.44771525 10,7 L10,9 C10,9.55228475 9.55228475,10 9,10 L7,10 C6.44771525,10 6,9.55228475 6,9 L6,7 C6,6.44771525 6.44771525,6 7,6 L9,6 Z M4,6 C4.55228475,6 5,6.44771525 5,7 L5,9 C5,9.55228475 4.55228475,10 4,10 L2,10 C1.44771525,10 1,9.55228475 1,9 L1,7 C1,6.44771525 1.44771525,6 2,6 L4,6 Z M14,6 C14.5522847,6 15,6.44771525 15,7 L15,9 C15,9.55228475 14.5522847,10 14,10 L12,10 C11.4477153,10 11,9.55228475 11,9 L11,7 C11,6.44771525 11.4477153,6 12,6 L14,6 Z M9,1 C9.55228475,1 10,1.44771525 10,2 L10,4 C10,4.55228475 9.55228475,5 9,5 L7,5 C6.44771525,5 6,4.55228475 6,4 L6,2 C6,1.44771525 6.44771525,1 7,1 L9,1 Z M4,1 C4.55228475,1 5,1.44771525 5,2 L5,4 C5,4.55228475 4.55228475,5 4,5 L2,5 C1.44771525,5 1,4.55228475 1,4 L1,2 C1,1.44771525 1.44771525,1 2,1 L4,1 Z M14,1 C14.5522847,1 15,1.44771525 15,2 L15,4 C15,4.55228475 14.5522847,5 14,5 L12,5 C11.4477153,5 11,4.55228475 11,4 L11,2 C11,1.44771525 11.4477153,1 12,1 L14,1 Z"/></svg></button>
+            <button type="button" class="grid-list-btn p-1 px-2 rounded" data-target="#data-grid-list" data-toggle="tab"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="fill-current"><path fill-rule="evenodd" d="M14,13 C14.5522847,13 15,13.4477153 15,14 C15,14.5522847 14.5522847,15 14,15 L2,15 C1.44771525,15 1,14.5522847 1,14 C1,13.4477153 1.44771525,13 2,13 L14,13 Z M14,9 C14.5522847,9 15,9.44771525 15,10 C15,10.5522847 14.5522847,11 14,11 L2,11 C1.44771525,11 1,10.5522847 1,10 C1,9.44771525 1.44771525,9 2,9 L14,9 Z M14,5 C14.5522847,5 15,5.44771525 15,6 C15,6.55228475 14.5522847,7 14,7 L2,7 C1.44771525,7 1,6.55228475 1,6 C1,5.44771525 1.44771525,5 2,5 L14,5 Z M14,1 C14.5522847,1 15,1.44771525 15,2 C15,2.55228475 14.5522847,3 14,3 L2,3 C1.44771525,3 1,2.55228475 1,2 C1,1.44771525 1.44771525,1 2,1 L14,1 Z"/></svg></button>
+          </div>
+        </div>
+        <div class="flex-1 flex">
+          <div class="btn-group space-x-2 text-gray-400 text-xs flex">
+            <button type="button" class="grid-list-btn active p-1 px-2 rounded">Library</button>
+            <button type="button" class="grid-list-btn p-1 px-2 rounded">States</button>
+            <button type="button" class="grid-list-btn p-1 px-2 rounded">Screenshots</button>
+          </div>
+        </div>
+        <div class="w-1/4">
+          <div class="mast-search px-1 text-right">
+            <label for="search" class="inline-block cursor-pointer">
+              <input type="text" id="search" class="form-control border border-w-25 p-1 px-2 bg-b-25 text-white text-xs rounded-full" placeholder="Search" />
+              <i class="fal fa-fw fa-search"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body flex">
+      <div class="sidebar w-1/4 bg-gray-800 flex flex-col relative">
+        <ul class="aside-nav bg-gray-700 flex items-center">
+          <li>
+            <div class="filter p-2 bg-gray-700 text-gray-300 flex items-center text-xs">
+              <select class="selectpicker select-group-sort" data-width="fit" data-icon-base="fal" data-tick-icon="fa-check" data-multiple-separator=" / " data-show-tick="false" multiple>
+                <optgroup label="Group by" data-min-options="1" data-max-options="1">
+                  <option value="none">None</option>
+                  <option value="type" selected>Type</option>
+                  <option value="company">Company</option>
+                </optgroup>
+                <optgroup label="Sort by" data-min-options="1" data-max-options="1">
+                  <option value="" data-subtext="Asc">Name</option>
+                  <option value="" data-subtext="Asc" selected>Year</option>
+                </optgroup>
+              </select>
+            </div>
+          </li>
+          <li class="ml-auto mr-2 relative">
+            <div class="dropdown sidebar-action sidebar-action-systems">
+              <button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fal fa-cog opacity-75"></i></button>
+<!-- TOGGLE SYSTEMS -->
+              <ul class="dropdown-menu">
+                <template v-for="(value, index) in systems">
+                  <li v-if="index !== 0" role="separator" class="divider"></li>
+                  <template v-for="(value, index) in value.hardware">
+                    <li>
+                      <a href="#" class="flex items-center" @click="toggleSystem(value, $event)" @click.stop>
+                        <span :class="[ value.hidden ? '' : 'hidden' ]"><i class="fal fa-fw fa-square mr-1 opacity-50 text-base" title="Hidden"></i></span>
+                        <span :class="[ !value.hidden ? '' : 'hidden' ]"><i class="fas fa-fw fa-check-square mr-1 text-blue-600 text-base" title="Visible"></i></span>
+                        <span class="flex-1">{{ value.name }}</span>
+                      </a>
+                    </li>
+                  </template>
+                </template>
+              </ul>
+<!-- /TOGGLE SYSTEMS -->
+            </div>
+            <div class="dropdown sidebar-action sidebar-action-collections hidden"><button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fal fa-plus opacity-75 text-base"></i></button><ul class="dropdown-menu"><li><a href="#">New Collection</a></li><li><a href="#">New Smart Collection</a></li></ul></div>
+          </li>
+        </ul>
+        <div class="flex-1 flex flex-col">
+          <div class="relative flex flex-col flex-1">
+            <div class="flex-1">
+<!-- SYSTEMS -->
+              <ul id="aside-systems" class="list py-2 leading-loose">
+                <template v-for="(value, index) in systems">
+                  <li class="dropdown-header py-1 px-4 text-xs text-gray-500 font-bold leading-none uppercase">{{ value.name }}</li>
+                  <template v-for="(value, index) in value.hardware">
+                    <li v-if="!value.hidden" class="my-1 relative">
+                      <a href="#" :class="['pl-4 flex items-center opacity-75', {'active': value.active }]" @click="toggleActive(value, $event)">
+                        <img :src="'img/'+ value.img + '.png'" class="mr-2 w-4 h-auto" :alt="value.name" />
+                        <span class="pr-5 truncate">{{ value.name }}</span>
+                      </a>
+                      <div class="w-6 flex items-center absolute right-0 inset-y-0">
+                        <div class="dropdown flex items-center">
+                          <button type="button" class="dropdown-toggle text-xl flex items-center" data-toggle="dropdown">
+                            <i class="fal fa-fw fa-ellipsis-v"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Play Random Game</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Default Core <i class="fas fa-angle-right"></i></a></li>
+                            <li><a href="#">Default Shader <i class="fas fa-angle-right"></i></a></li>
+                            <li><a href="#">Default Scale <i class="fas fa-angle-right"></i></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Hide System</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </template>
+                </template>
+              </ul>
+<!-- /SYSTEMS -->
+<!-- COLLECTIONS -->
+              <ul id="aside-collections" class="list py-2 leading-loose">
+                <li class="dropdown-header border-t border-gray-700 pt-5 pb-1 px-4 text-xs text-gray-500 font-bold leading-none uppercase">Collections</li>
+                <li v-for="(value, index) in collections" class="my-1 relative">
+                  <a href="#" :class="['pl-4 flex items-center opacity-75', {'active': value.active }]" @click="toggleActive(value, $event)">
+                    <i :class="['fal fa-fw mr-2 opacity-50', value.smart ? 'fa-flux-capacitor' : 'fa-clone']"></i>
+                    <span class="pr-5 truncate">{{ value.name }}</span>
+                  </a>
+                  <div class="w-6 flex items-center absolute right-0 inset-y-0">
+                    <div :class="['dropdown flex items-center', value.smart ? 'dropup' : '']">
+                      <button type="button" class="dropdown-toggle text-xl flex items-center" data-toggle="dropdown">
+                        <i class="fal fa-fw fa-ellipsis-v"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Play Random Game</a></li>
+                        <template v-if="value.smart">
+                          <li class="divider"></li>
+                          <li><a href="#">Edit</a></li>                          
+                        </template>
+                        <li class="divider"></li>
+                        <li><a href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+<!-- /COLLECTIONS -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main bg-gray-900 flex-1 overflow-y-scroll">
+        <div class="tab-content">
+          <div id="data-grid-th" class="tab-pane fade in active">
+<!-- GAMES TH -->
+            <ul class="game-list pt-12 pb-px px-8 text-gray-300 text-center flex flex-wrap">
+              <li v-for="(value, index) in games" class="mb-12 w-1/3">
+                <a href="#" :class="['', {'active': value.active }]">
+                  <img :src="value.cover" class="mb-1 p-px inline-block align-middle rounded-sm shadow" />
+                  <b class="text-xs block">{{ value.name }}</b>
+                </a>
+              </li>
+            </ul>
+<!-- /GAMES TH -->
+          </div>
+          <div id="data-grid-list" class="tab-pane fade">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th width="50%">Name <i class="fal fa-fw fa-angle-up ml-2 opacity-50 float-right text-sm"></i></th>
+                  <th>Genre</th>
+                  <th>Last Played</th>
+                </tr>
+              </thead>
+              <tbody>
+<!-- GAMES TABLE -->
+                <template v-for="(value, index) in games">
+                  <tr :class="['', { 'active': value.active }]">
+                    <td>
+                      <div class="flex items-center">
+                        <b :class="['mr-2 w-2 h-2 rounded-full', value.new ? 'bg-blue-400' : 'bg-transparent']" :title="value.new ? 'New' : false"></b>
+                        <span class="truncate">{{ value.name }}</span>
+                      </div>
+                    </td>
+                    <td>{{ value.genre }}</td>
+                    <td class="text-xs">{{ value.played }} <small class="block opacity-50">{##} {time_unit} ago</small></td>
+                  </tr>
+                </template>
+<!-- /GAMES TABLE -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ul class="p-3 text-2xl flex fixed bottom-0 right-0">
+    <li><a href="https://github.com/craigerskine/openemu-prototypes" class="opacity-50 hover:opacity-100 focus:opacity-100"><i class="fab fa-fw fa-github"></i></a></li>
+  </ul>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
+  <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-select@1/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://unpkg.com/bootstrap@3/dist/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/holderjs/holder.min.js"></script>
+  <script>
+    // data
+    var app = new Vue({
+      el: '.window',
+      data: {
+        systems: [
+          {
+            name: 'consoles',
+            hardware: [
+              { name: 'Arcade', img: 'arcade', hidden: true },
+              { name: 'Master System', img: 'sega-master-system' },
+              { name: 'Genesis', img: 'sega-genesis', active: true },
+              { name: 'Sega CD', img: 'sega-cd' },
+              { name: 'GameCube', img: 'nintendo-gc', hidden: true },
+            ]
+          },
+          {
+            name: 'portables',
+            hardware: [
+              { name: 'Gameboy', img: 'nintendo-gb' },
+              { name: 'Gameboy Advance', img: 'nintendo-gba' },
+              { name: 'DS', img: 'nintendo-ds' },
+            ]
+          }
+        ],
+        collections: [
+          { name: 'Collection 1' },
+          { name: 'Super long collection name just in case...' },
+          { name: 'Shmups' },
+          { name: 'RPG' },
+          { name: 'Smart Collection', smart: true },
+        ],
+        games: [
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=333&outline=yes', genre: 'Action', played: '2019/05/01', active: true },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=111&outline=yes', genre: 'RPG', played: '2019/05/26' },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=222&outline=yes', genre: 'Platformer', played: '2019/07/26' },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=666&outline=yes', genre: 'Puzzle', played: '2019/10/12', new: true },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=DDD&outline=yes', genre: 'Action', played: '2019/12/16', new: true },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=333&outline=yes', genre: 'RPG', played: '2019/08/09' },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=111&outline=yes', genre: 'RPG', played: '2019/09/06' },
+          { name: 'Some Title', cover: 'holder.js/100x150?fg=999&bg=333&outline=yes', genre: 'Action', played: '2019/11/19' },
+        ],
+      },
+      methods: {
+        toggleSystem: function(id, e){
+          e.preventDefault();
+          app.$set(id, 'hidden', !id.hidden);
+        },
+        toggleActive: function(id, e){
+          e.preventDefault();
+          // deactivate all items
+          app.systems.forEach(function(system_index, index){
+            system_index.hardware.forEach(function(hardware_index, index){
+              app.$set(hardware_index, 'active', false);
+            });
+          });
+          app.collections.forEach(function(collection_index, index){
+            app.$set(collection_index, 'active', false);
+          });
+          // activate clicked item
+          app.$set(id, 'active', true);
+        },
+      }
+    });
+
+    twind.setup({
+      mode: "silent",
+      theme: {
+        extend: {
+          colors: {
+            gray: twindColors.gray,
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+          },
+        },
+      },
+    })
+    twind.tw(() => ({
+      '@global': {
+        ':root [v-cloak]': { '@apply': 'hidden', },
+      }
+    }))
+    twindObserve.observe(document.documentElement);
+    document.documentElement.removeAttribute('hidden');
+
+    $(function(){
+
+      // grid nav
+      $('.grid-list-btn').on('click', function(e){
+        e.preventDefault();
+        $(this).closest('.btn-group').find('.grid-list-btn').removeClass('active');
+        $(this).addClass('active');
+      });
+
+      // grid
+      $('.game-list a').on('click', function(e){
+        e.preventDefault();
+        $(this).closest('.game-list').find('a').removeClass('active');
+        $(this).addClass('active');
+      });
+      $('#data-grid-list tr').on('click', function(){
+        $('#data-grid-list tr').removeClass('active');
+        $(this).addClass('active');
+      });
+
+      // selectpicker
+      $('.select-group-sort').on('loaded.bs.select', function(){
+        $('.bs-caret .caret').append('<i class="fal fa-fw fa-angle-down" />');
+      }).on('changed.bs.select', function(){
+        if($(this).val() == 'company,'){
+          $('#aside-systems .dropdown-header').show().text('Nintendo');
+          $('#aside-systems .dropdown-header').first().text('Sega');
+        } else if($(this).val() == 'none,'){
+          $('#aside-systems .dropdown-header').hide();
+        } else {
+          $('#aside-systems .dropdown-header').show().text('Portables');
+          $('#aside-systems .dropdown-header').first().text('Consoles');
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>
