@@ -1,7 +1,7 @@
 # [craigerskine.github.io](https://craigerskine.github.io)
 
-* [wrapped](https://craigerskine.github.io/prototypes/)
-* prototypes
+* [**Wrapped**](https://craigerskine.github.io/prototypes/)
+* **Prototypes**
   * [Kiesel - Order Sheet](https://craigerskine.github.io/prototypes/kiesel/order-sheet/)
   * OpenEmu
     * [Application UI](https://craigerskine.github.io/prototypes/openemu/ui/)
