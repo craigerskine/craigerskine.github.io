@@ -17,7 +17,7 @@
   </style>
 
 </head>
-<body class="min-h-screen bg-gradient-to-b from-gray-100 via-transparent to-gray-300 bg-gray-200 bg-fixed text-gray-600 transition-all duration-300">
+<body class="min-h-screen bg-gradient-to-b from-gray-100 to-gray-50 bg-fixed text-gray-600 transition-all duration-300">
 
     <div id="app" class="mx-auto min-h-screen max-w-screen-sm lg:max-w-screen-lg flex flex-col" v-cloak>
       <header class="p-4 flex items-center">
@@ -196,9 +196,9 @@
           colors: {
             gray: twindColors.gray,
           },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-          },
+          fontFamily: (theme) => ({
+            sans: 'Inter,'+ theme('fontFamily.sans'),
+          }),
         },
       },
     })
