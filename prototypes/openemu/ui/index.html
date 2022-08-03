@@ -87,7 +87,7 @@
           <div class="relative flex flex-col flex-1">
             <div class="flex-1">
 <!-- SYSTEMS -->
-              <ul id="aside-systems" class="list py-2 leading-loose">
+              <ul id="aside-systems" class="list-aside py-2 leading-loose">
                 <template v-for="(value, index) in systems">
                   <li class="dropdown-header py-1 px-4 text-xs text-gray-500 font-bold leading-none uppercase">{{ value.name }}</li>
                   <template v-for="(value, index) in value.hardware">
@@ -118,7 +118,7 @@
               </ul>
 <!-- /SYSTEMS -->
 <!-- COLLECTIONS -->
-              <ul id="aside-collections" class="list py-2 leading-loose">
+              <ul id="aside-collections" class="list-aside py-2 leading-loose">
                 <li class="dropdown-header border-t border-gray-700 pt-5 pb-1 px-4 text-xs text-gray-500 font-bold leading-none uppercase">Collections</li>
                 <li v-for="(value, index) in collections" class="my-1 relative">
                   <a href="#" :class="['pl-4 flex items-center opacity-75', {'active': value.active }]" @click="toggleActive(value, $event)">
