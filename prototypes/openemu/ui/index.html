@@ -34,9 +34,9 @@
         </div>
         <div class="w-1/4">
           <div class="mast-search px-1 text-right">
-            <label for="search" class="inline-block cursor-pointer">
+            <label for="search" class="inline-flex items-center cursor-pointer">
               <input type="text" id="search" class="form-control border border-w-25 p-1 px-2 bg-b-25 text-white text-xs rounded-full" placeholder="Search" />
-              <i class="fal fa-fw fa-search"></i>
+              <iconify-icon icon="mdi:magnify" width="1em" height="1em" inline="false" class="text-xl"></iconify-icon>
             </label>
           </div>
         </div>
@@ -47,7 +47,7 @@
         <ul class="aside-nav bg-gray-700 flex items-center">
           <li>
             <div class="filter p-2 bg-gray-700 text-gray-300 flex items-center text-xs">
-              <select class="selectpicker select-group-sort" data-width="fit" data-icon-base="fal" data-tick-icon="fa-check" data-multiple-separator=" / " data-show-tick="false" multiple>
+              <select class="selectpicker select-group-sort" data-width="fit" data-multiple-separator=" / " data-show-tick="false" multiple>
                 <optgroup label="Group by" data-min-options="1" data-max-options="1">
                   <option value="none">None</option>
                   <option value="type" selected>Type</option>
@@ -62,7 +62,7 @@
           </li>
           <li class="ml-auto mr-2 relative">
             <div class="dropdown sidebar-action sidebar-action-systems">
-              <button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fal fa-cog opacity-75"></i></button>
+              <button type="button" class="dropdown-toggle" data-toggle="dropdown"><iconify-icon icon="mdi:cog" width="1em" height="1em" inline="false" class="opacity-75"></iconify-icon></button>
 <!-- TOGGLE SYSTEMS -->
               <ul class="dropdown-menu">
                 <template v-for="(value, index) in systems">
@@ -70,8 +70,8 @@
                   <template v-for="(value, index) in value.hardware">
                     <li>
                       <a href="#" class="flex items-center" @click="toggleSystem(value, $event)" @click.stop>
-                        <span :class="[ value.hidden ? '' : 'hidden' ]"><i class="fal fa-fw fa-square mr-1 opacity-50 text-base" title="Hidden"></i></span>
-                        <span :class="[ !value.hidden ? '' : 'hidden' ]"><i class="fas fa-fw fa-check-square mr-1 text-blue-600 text-base" title="Visible"></i></span>
+                        <span :class="[ value.hidden ? '' : 'hidden' ]"><iconify-icon icon="mdi:checkbox-blank-outline" inline="false" class="mr-1 opacity-50 text-base" title="Hidden"></iconify-icon></span>
+                        <span :class="[ !value.hidden ? '' : 'hidden' ]"><iconify-icon icon="mdi:checkbox-marked" inline="false" class="mr-1 text-blue-600 text-base" title="Visible"></iconify-icon></span>
                         <span class="flex-1">{{ value.name }}</span>
                       </a>
                     </li>
@@ -80,7 +80,7 @@
               </ul>
 <!-- /TOGGLE SYSTEMS -->
             </div>
-            <div class="dropdown sidebar-action sidebar-action-collections hidden"><button type="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fal fa-plus opacity-75 text-base"></i></button><ul class="dropdown-menu"><li><a href="#">New Collection</a></li><li><a href="#">New Smart Collection</a></li></ul></div>
+            <div class="dropdown sidebar-action sidebar-action-collections hidden"><button type="button" class="dropdown-toggle" data-toggle="dropdown"><iconify-icon icon="mdi:plus" width="1em" height="1em" inline="false" class="text-base opacity-75"></iconify-icon></button><ul class="dropdown-menu"><li><a href="#">New Collection</a></li><li><a href="#">New Smart Collection</a></li></ul></div>
           </li>
         </ul>
         <div class="flex-1 flex flex-col">
@@ -99,14 +99,14 @@
                       <div class="w-6 flex items-center absolute right-0 inset-y-0">
                         <div class="dropdown flex items-center">
                           <button type="button" class="dropdown-toggle text-xl flex items-center" data-toggle="dropdown">
-                            <i class="fal fa-fw fa-ellipsis-v"></i>
+                            <iconify-icon icon="mdi:dots-vertical" width="1em" height="1em" inline="false"></iconify-icon>
                           </button>
                           <ul class="dropdown-menu">
                             <li><a href="#">Play Random Game</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Default Core <i class="fas fa-angle-right"></i></a></li>
-                            <li><a href="#">Default Shader <i class="fas fa-angle-right"></i></a></li>
-                            <li><a href="#">Default Scale <i class="fas fa-angle-right"></i></a></li>
+                            <li><a href="#">Default Core <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="float-right"></iconify-icon></a></li>
+                            <li><a href="#">Default Shader <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="float-right"></iconify-icon></a></li>
+                            <li><a href="#">Default Scale <iconify-icon icon="mdi:chevron-right" width="1em" height="1em" inline="false" class="float-right"></iconify-icon></a></li>
                             <li class="divider"></li>
                             <li><a href="#">Hide System</a></li>
                           </ul>
@@ -122,13 +122,13 @@
                 <li class="dropdown-header border-t border-gray-700 pt-5 pb-1 px-4 text-xs text-gray-500 font-bold leading-none uppercase">Collections</li>
                 <li v-for="(value, index) in collections" class="my-1 relative">
                   <a href="#" :class="['pl-4 flex items-center opacity-75', {'active': value.active }]" @click="toggleActive(value, $event)">
-                    <i :class="['fal fa-fw mr-2 opacity-50', value.smart ? 'fa-flux-capacitor' : 'fa-clone']"></i>
+                    <iconify-icon :icon="value.smart ? 'mdi:chip' : 'mdi:content-duplicate'" width="1em" height="1em" inline="false" class="mr-2 opacity-50"></iconify-icon>
                     <span class="pr-5 truncate">{{ value.name }}</span>
                   </a>
                   <div class="w-6 flex items-center absolute right-0 inset-y-0">
                     <div :class="['dropdown flex items-center', value.smart ? 'dropup' : '']">
                       <button type="button" class="dropdown-toggle text-xl flex items-center" data-toggle="dropdown">
-                        <i class="fal fa-fw fa-ellipsis-v"></i>
+                        <iconify-icon icon="mdi:dots-vertical" width="1em" height="1em" inline="false"></iconify-icon>
                       </button>
                       <ul class="dropdown-menu">
                         <li><a href="#">Play Random Game</a></li>
@@ -166,7 +166,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th width="50%">Name <i class="fal fa-fw fa-angle-up ml-2 opacity-50 float-right text-sm"></i></th>
+                  <th width="50%">Name <iconify-icon icon="mdi:chevron-up" inline="false" class="ml-2 opacity-50 float-right text-sm"></iconify-icon></th>
                   <th>Genre</th>
                   <th>Last Played</th>
                 </tr>
@@ -196,13 +196,13 @@
   </div>
 
   <ul class="p-3 text-2xl flex fixed bottom-0 right-0">
-    <li><a href="https://github.com/craigerskine/openemu-prototypes" class="opacity-50 hover:opacity-100 focus:opacity-100"><i class="fab fa-fw fa-github"></i></a></li>
+    <li><a href="https://github.com/craigerskine/openemu-prototypes" class="opacity-50 hover:opacity-100 focus:opacity-100"><iconify-icon icon="fa6-brands:github" width="1em" height="1em" inline="false"></iconify-icon></a></li>
   </ul>
 
   <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
   <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
   <script src="https://unpkg.com/jquery@3/dist/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/iconify-icon/dist/iconify-icon.min.js"></script>
   <script src="https://unpkg.com/bootstrap-select@1/dist/js/bootstrap-select.min.js"></script>
   <script src="https://unpkg.com/bootstrap@3/dist/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/holderjs/holder.min.js"></script>
@@ -314,7 +314,7 @@
 
       // selectpicker
       $('.select-group-sort').on('loaded.bs.select', function(){
-        $('.bs-caret .caret').append('<i class="fal fa-fw fa-angle-down" />');
+        $('.bs-caret .caret').append('<iconify-icon icon="mdi:chevron-down" width="1em" height="1em" inline="false"></iconify-icon>');
       }).on('changed.bs.select', function(){
         if($(this).val() == 'company,'){
           $('#aside-systems .dropdown-header').show().text('Nintendo');

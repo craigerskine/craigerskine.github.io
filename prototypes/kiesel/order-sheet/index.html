@@ -29,17 +29,17 @@
           </svg>
         </section>
         <section class="model border-r-1 space-x-4 p-4 flex-1 flex items-center justify-center lg:(space-x-8 p-8) md:(border-l-0)">
-          <i class="fal fa-fw fa-directions opacity-25 text-lg lg:text-4xl"></i>
+          <iconify-icon icon="mdi:directions" inline="false" class="opacity-25 text-lg lg:text-4xl"></iconify-icon>
           <h1 class="text-[calc(1vw+1vh+.5vmin)] leading-tight">
             <b>Vader 6</b>
             <small class="text-[calc(.5vw+.5vh+.5vmin)] block opacity-50">Right Handed</small>
           </h1>
         </section>
         <section class="for space-x-4 p-4 flex-1 flex items-center justify-center lg:(space-x-8 p-8)">
-          <i class="fal fa-fw fa-tasks opacity-25 text-lg lg:text-4xl"></i>
+          <iconify-icon icon="mdi:list-box" inline="false" class="opacity-25 text-lg lg:text-4xl"></iconify-icon>
           <h2 class="text-[calc(1vw+1vh+.5vmin)] leading-tight">
             <b>desired specs</b>
-            <small class="text-[calc(.5vw+.5vh+.5vmin)] block opacity-50"><a href="mailto:user@domain.com?Subject=Kiesel+Vader+6+Order" class="text-current hover:(underline) focus:(underline)" onclick="window.open(this.href,'Email','width=800,height=600,scrollbars,resizable'); return false;"><i class="fal fa-fw fa-at mr-1 opacity-50"></i>{{ user_name }}</a></small>
+            <small class="text-[calc(.5vw+.5vh+.5vmin)] block opacity-50"><a href="mailto:user@domain.com?Subject=Kiesel+Vader+6+Order" class="text-current hover:(underline) focus:(underline)" onclick="window.open(this.href,'Email','width=800,height=600,scrollbars,resizable'); return false;"><iconify-icon icon="mdi:at" inline="false" class="mr-1 opacity-50"></iconify-icon>{{ user_name }}</a></small>
           </h2>
         </section>
       </header>
@@ -47,14 +47,14 @@
         <section class="mx-auto w-full max-w-lg lg:(mx-0)"><a href="#" class="py-5 block sticky top-0 transition duration-300 transform hover:(-rotate-6) focus:(-rotate-6)"><img src="assets/img/v6.png" alt="Osiris 6" class="m-auto px-4" /></a></section>
         <section class="mx-auto w-full max-w-prose lg:(mx-0)">
           <fieldset class="px-4 relative hidden">
-            <label for="search" class="w-8 h-8 flex items-center justify-center absolute z-10 right-5 top-1/2 transform -translate-y-1/2"><i class="m-auto fa fa-fw fa-search" role="presentation" aria-label="Search"></i></label>
+            <label for="search" class="w-8 h-8 flex items-center justify-center absolute z-10 right-5 top-1/2 transform -translate-y-1/2"><iconify-icon icon="mdi:magnify" width="1em" height="1em" inline="false" class="m-auto"></iconify-icon></label>
             <input type="search" id="search" v-model="option_search" class="appearance-none py-3 px-6 w-full bg-gray-500 bg-opacity-10 block rounded-md transition duration-300 focus:(bg-white outline-none shadow-xl ring(& white)) relative z-20" placeholder="Search" />
           </fieldset>
-          <section v-if="!option_results.length" class="py-8 text(gray-500 opacity-50) font-bold text-2xl uppercase tracking-tight text-center"><i class="fa fa-fw fa-ban opacity-50" role="presentation" aria-hidden="true"></i> No Results</section>
+          <section v-if="!option_results.length" class="py-8 text(gray-500 opacity-50) font-bold text-2xl uppercase tracking-tight text-center"><iconify-icon icon="mdi:cancel" width="1em" height="1em" inline="false" class="opacity-50"></iconify-icon> No Results</section>
           <ul class="py-4">
             <li v-for="(item, index) in option_results" :class="[{'p-4 flex items-center relative rounded': true, 'ring(1 red-500 opacity-25) text-red-500 bg(red-500 opacity-10) shadow-2xl animate-pulse': item.question}]">
               <b class="text-xs"><b v-for="(tag, index) in item.tags" class="w-16 px-1 py-px inline-flex justify-center rounded bg(gray-500 opacity-20)">{{ tag.title }}</b></b>
-              <i class="mx-6 ring(1 inset green-500 opacity-25) w-12 h-12 text(green-500 2xl) flex rounded-full"><i :class="'m-auto fal fa-'+ item.ico"></i></i>
+              <i class="mx-6 ring(1 inset green-500 opacity-25) w-12 h-12 text(green-500 2xl) flex rounded-full"><iconify-icon :icon="item.ico" inline="false" class="m-auto"></iconify-icon></i>
               <p class="flex-1 flex flex-wrap truncate">
                 <b>{{ item.title }}</b>
                 <small v-if="item.desc" class="truncate w-full min-w-0 block opacity-60">{{ item.desc }}</small>
@@ -84,7 +84,7 @@
 
     <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
     <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
-    <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/iconify-icon/dist/iconify-icon.min.js"></script>
     <script>
       // data
       var app = new Vue({
@@ -100,119 +100,119 @@
               {
                 title: 'Maple / Swamp Ash',
                 desc: 'Neck / Body',
-                ico: 'guitar-electric',
+                ico: 'mdi:guitar-electric',
                 tags: [ { title: 'ASH' }, ],
                 price: 120,
               },
               {
                 title: 'Ash',
                 desc: 'Top',
-                ico: 'arrow-to-top',
+                ico: 'mdi:arrow-collapse-up',
                 tags: [ { title: 'AT' }, ],
                 price: 200,
               },
               {
                 title: 'Antique Ash',
                 desc: 'Treatment',
-                ico: 'spray-can',
+                ico: 'mdi:spray',
                 tags: [ { title: 'AAT' }, ],
                 price: 100,
               },
               {
                 title: 'Ultra-Thin Raw Tone',
                 desc: 'Satin Finish',
-                ico: 'tree-alt',
+                ico: 'mdi:grain',
                 tags: [ { title: 'RTF' }, ],
                 price: 0,
               },
               {
                 title: '3-Piece Maple Neck',
                 desc: '1 Purpleheart Stripe',
-                ico: 'grip-lines-vertical',
+                ico: 'mdi:dots-horizontal',
                 tags: [ { title: '3MP' }, ],
                 price: 150,
               },
               {
                 title: 'Thinner Neck',
                 desc: 'Profile',
-                ico: 'compress-alt transform -rotate-45',
+                ico: 'mdi:arrow-collapse-horizontal',
                 tags: [ { title: 'THNN' }, ],
                 price: 60,
               },
               {
                 title: 'Tung Oil Finish',
                 desc: 'Back of Neck',
-                ico: 'oil-can',
+                ico: 'mdi:oil',
                 tags: [ { title: 'TN' }, ],
                 price: 0,
               },
               {
                 title: 'Rosewood',
                 desc: 'Fingerboard',
-                ico: 'hand-pointer',
+                ico: 'mdi:cursor-pointer',
                 tags: [ { title: 'RWF' }, ],
                 price: 30,
               },
               {
                 title: '12th Fret K Logo',
                 desc: 'Staggered Offset Dots',
-                ico: 'paint-brush',
+                ico: 'mdi:fill',
                 tags: [ { title: 'IKSD' }, ],
                 price: 30,
               },
               {
                 title: 'Luminlay Inlay',
                 desc: 'Material',
-                ico: 'ellipsis-h',
+                ico: 'mdi:dots-vertical',
                 tags: [ { title: 'ILL' }, ],
                 price: 75,
               },
               {
                 title: 'Stainless Med-Jumbo Frets',
                 desc: '.048" H .103" W',
-                ico: 'align-justify',
+                ico: 'mdi:align-vertical-distribute',
                 tags: [ { title: 'STF' }, ],
                 price: 0,
               },
               {
                 title: '20" Fretboard',
                 desc: 'Radius',
-                ico: 'ring',
+                ico: 'mdi:vector-curve',
                 tags: [ { title: 'R20' }, ],
                 price: 0,
               },
               {
                 title: 'Replace Standard Pickups',
                 desc: 'Fishman Fluence, 3-way blade, 25K Fishman pots',
-                ico: 'wave-square',
+                ico: 'mdi:electric-switch',
                 tags: [ { title: 'ACF' }, ],
                 price: 200,
               },
               {
                 title: 'Black Hardware',
                 desc: 'Standard',
-                ico: 'wrench',
+                ico: 'mdi:wrench',
                 tags: [ { title: 'BC' }, ],
                 price: 0,
               },
               {
                 title: 'Elixir Light Gauge',
                 desc: '.010 - .046',
-                ico: 'stream',
+                ico: 'mdi:waveform',
                 tags: [ { title: '1046E' }, ],
                 price: 0,
               },
               {
                 title: 'Black Logo',
                 desc: 'Branding',
-                ico: 'draw-polygon',
+                ico: 'mdi:vector-point-select',
                 tags: [ { title: 'BL' }, ],
                 price: 0,
               },
               {
                 title: 'Ultimate Soft Case',
                 desc: 'Black',
-                ico: 'suitcase',
+                ico: 'mdi:briefcase',
                 tags: [ { title: 'SC9' }, ],
                 price: 70,
               },

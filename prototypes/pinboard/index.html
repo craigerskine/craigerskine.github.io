@@ -5,7 +5,6 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Pinboard: Modern Bookmarks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
   <style>
     /* main menu */
     .nav-main ul > li:hover > ul,.nav-main ul > li:focus-within > ul { opacity: 1; visibility: visible; --tw-translate-y: 0; }
@@ -23,7 +22,7 @@
       <header class="p-4 flex items-center">
         <h1>
           <a href="./" class="logo flex items-center">
-            <i class="fad fa-fw fa-thumbtack fa-lg text-purple-500 transform -rotate-45"></i>
+            <iconify-icon icon="mdi:pin" width="1em" height="1em" inline="false" class="text-purple-500 transform -rotate-45"></iconify-icon>
             <b class="mx-2 uppercase opacity-50">Pinboard</b>
           </a>
         </h1>
@@ -32,7 +31,7 @@
             <li v-for="(nav, index) in nav_header" class="group relative">
               <a :href="nav.link" :class="['py-2 hover:text-blue-800 focus:text-blue-800 block transition duration-300', nav.name == 'Add' || nav.name == 'Account' ? 'text-gray-600' : 'text-blue-500']">
                 <template v-if="nav.ico">
-                  <i :class="'fal fa-fw fa-lg fa-'+ nav.ico"></i>
+                  <iconify-icon :icon="nav.ico" width="1em" height="1em" inline="false" class="text-base"></iconify-icon>
                 </template>
                 <template v-else>
                   {{ nav.name }}
@@ -65,15 +64,15 @@
                 <li v-for="(pin, index) in pins" class="group py-6 px-4 flex items-center hover:bg-gray-400 hover:bg-opacity-10 transition duration-300 relative">
                   <a href="#" @click.prevent="toggleFav(pin, $event)" :class="['block transform transition duration-75', pin.fav ? 'text-yellow-500' : 'text-black opacity-30 -rotate-45']">
                     <b :class="{'hidden': !pin.fav}">
-                      <i class="fas fa-fw fa-thumbtack"></i>
+                      <iconify-icon icon="mdi:pin" width="1em" height="1em" inline="false" class=""></iconify-icon>
                     </b>
                     <b :class="{'hidden': pin.fav}">
-                      <i class="fal fa-fw fa-thumbtack"></i>
+                      <iconify-icon icon="mdi:pin-outline" width="1em" height="1em" inline="false" class=""></iconify-icon>
                     </b>
                   </a>
                   <div class="pl-4 flex-1">
                     <div class="mb-1 flex items-center">
-                      <small v-if="pin.private" class="mr-2"><i class="fad fa-fw fa-sm fa-eye-slash" title="Private"></i></small>
+                      <small v-if="pin.private" class="mr-2"><iconify-icon icon="mdi:eye-off" width="1em" height="1em" inline="false"></iconify-icon></small>
                       <a :href="pin.link" class="text-blue-500 hover:text-blue-800 focus:text-blue-800 inline-block transition duration-300">{{ pin.name }}</a>
                     </div>
                     <small class="mb-1 block text-gray-500" v-if="pin.desc !== ''">{{ pin.desc }}</small>
@@ -82,7 +81,7 @@
                     </ul>
                   </div>
                   <a href="#" class="opacity-0 group-hover:opacity-100 transition duration-300">
-                    <i class="fal fa-fw fa-edit" title="Edit"></i>
+                    <iconify-icon icon="mdi:pencil" width="1em" height="1em" inline="false"></iconify-icon>
                   </a>
                 </li>
               </ul>
@@ -111,6 +110,7 @@
     </div>
 
   <script src="https://cdn.jsdelivr.net/combine/npm/twind/twind.umd.js,npm/twind/observe/observe.umd.js,npm/twind/colors/colors.umd.js"></script>
+  <script src="https://unpkg.com/iconify-icon/dist/iconify-icon.min.js"></script>
   <script src="https://unpkg.com/vue@2/dist/vue.min.js"></script>
 
   <script>
@@ -119,11 +119,11 @@
       el: '#app',
       data: {
         nav_header: [
-          { name: 'Add', link: '#', ico: 'plus-circle', sub: [
+          { name: 'Add', link: '#', ico: 'mdi:plus-circle', sub: [
             { name: 'Add URL', link: '#', },
             { name: 'Add Note', link: '#', },
           ],},
-          { name: 'Account', link: '#', ico: 'user-circle', sub: [
+          { name: 'Account', link: '#', ico: 'mdi:account-circle', sub: [
             { name: 'Account', link: '#', },
             { name: 'Help', link: '#', },
             { name: 'Log Out', link: '#', },

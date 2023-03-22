@@ -6,11 +6,10 @@
   <title>GitHub Issues Notifications</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" />
-  <script src="https://kit.fontawesome.com/6d6156d427.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-white text-gray-700 text-sm">
   <header class="h-16 bg-gray-900 flex items-center">
-    <a href="#" class="logo text-white px-8"><i class="fab fa-2x fa-github"></i></a>
+    <a href="#" class="logo text-white px-8"><iconify-icon icon="fa6-brands:github" width="1em" height="1em" inline="false" class="text-2xl"></iconify-icon></a>
     <input type="text" class="mr-2 py-2 px-3 max-w-xs bg-gray-800 flex-1 rounded focus:shadow-outline" placeholder="Search" />
     <nav>
       <ul class="flex">
@@ -21,33 +20,33 @@
       </ul>
     </nav>
     <ul class="util ml-auto px-6 text-white text-lg flex items-center">
-      <li class="px-2"><a href="#"><i class="fas fa-fw fa-bell"></i></a></li>
-      <li class="px-2"><a href="#"><i class="fal fa-fw fa-plus"></i></a></li>
-      <li class="px-2"><a href="#"><i class="fas fa-fw fa-user-circle"></i></a></li>
+      <li class="px-2"><a href="#"><iconify-icon icon="mdi:bell" width="1em" height="1em" inline="false"></iconify-icon></a></li>
+      <li class="px-2"><a href="#"><iconify-icon icon="mdi:plus" width="1em" height="1em" inline="false"></iconify-icon></a></li>
+      <li class="px-2"><a href="#"><iconify-icon icon="mdi:account-circle" width="1em" height="1em" inline="false"></iconify-icon></a></li>
     </ul>
   </header>
   <main class="p-8 md:flex">
     <nav class="md:mr-8 md:w-64">
       <ul class="list-nav leading-loose">
-        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 bg-blue-500 text-white flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-inbox mr-2"></i> Inbox <b class="ml-auto">360</b></a></li>
-        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-bookmark mr-2"></i> Saved <b class="ml-auto hidden">25</b></a></li>
-        <li class="pb-6"><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-check mr-2"></i> Done <b class="ml-auto hidden">25,678</b></a></li>
+        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 bg-blue-500 text-white flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:inbox" width="1em" height="1em" inline="false" class="mr-2 text-xl opacity-50"></iconify-icon> Inbox <b class="ml-auto">360</b></a></li>
+        <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:bookmark" width="1em" height="1em" inline="false" class="mr-2 text-xl opacity-50"></iconify-icon> Saved <b class="ml-auto hidden">25</b></a></li>
+        <li class="pb-6"><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:check" width="1em" height="1em" inline="false" class="mr-2 text-xl opacity-50"></iconify-icon> Done <b class="ml-auto hidden">25,678</b></a></li>
         <li>
-          <b class="pt-4 pb-2 px-2 text-gray-500 text-xs font-bold uppercase flex items-center">Filters <button type="button" class="ml-auto text-gray-700"><i class="fas fa-cog"></i></button></b>
+          <b class="pt-4 pb-2 px-2 text-gray-500 text-xs font-bold uppercase flex items-center">Filters <button type="button" class="ml-auto text-gray-700"><iconify-icon icon="mdi:cog" width="1em" height="1em" inline="false"></iconify-icon></button></b>
           <ul>
-            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-bullseye-arrow mr-2"></i> Assigned</a></li>
-            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="opacity-50 fas fa-fw fa-comment mr-2"></i> Participating</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:target" width="1em" height="1em" inline="false" class="mr-2 text-xl opacity-50"></iconify-icon> Assigned</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:comment" width="1em" height="1em" inline="false" class="mr-2 text-xl opacity-50"></iconify-icon> Participating</a></li>
           </ul>
         </li>
         <li class="pt-4">
           <b class="pt-4 pb-2 px-2 text-gray-500 text-xs font-bold uppercase flex items-center">Repositories</b>
           <ul>
-            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="fas fa-fw fa-bed mr-2 text-yellow-500"></i> Blah/Blah</a></li>
-            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><i class="fas fa-fw fa-leaf mr-2 text-pink-500"></i> Blah/Blah</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:bed" width="1em" height="1em" inline="false" class="mr-2 text-xl text-yellow-500 opacity-75"></iconify-icon> Blah/Blah</a></li>
+            <li><a href="#" class="mb-2 border border-transparent p-2 py-1 flex items-center rounded hover:bg-gray-200 hover:text-gray-700"><iconify-icon icon="mdi:leaf" width="1em" height="1em" inline="false" class="mr-2 text-xl text-pink-500 opacity-75"></iconify-icon> Blah/Blah</a></li>
           </ul>
         </li>
       </ul>
-      <p class="mt-5 border-t py-5 text-xs"><a href="#" class="flex items-center">Manage Notifications <i class="ml-1 fas fa-fw fa-caret-down"></i></a></p>
+      <p class="mt-5 border-t py-5 text-xs"><a href="#" class="flex items-center">Manage Notifications <iconify-icon icon="mdi:menu-down" width="1em" height="1em" inline="false" class="ml-1 text-xl"></iconify-icon></a></p>
     </nav>
     <section class="md:border-l md:pl-8 flex-1">
       <div class="mb-4 flex items-center">
@@ -63,7 +62,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <iconify-icon icon="mdi:source-commit" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">System Reorg</p>
@@ -79,7 +78,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-branch text-orange-500"></i>
+          <iconify-icon icon="mdi:source-branch" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">HelperApp Addition</p>
@@ -95,7 +94,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-merge text-orange-500"></i>
+          <iconify-icon icon="mdi:source-merge" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">Suggestion: Use better code</p>
@@ -111,7 +110,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <iconify-icon icon="mdi:source-commit" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">Installation Script Rewrite</p>
@@ -127,7 +126,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <iconify-icon icon="mdi:source-commit" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">Feature Request: Make it better</p>
@@ -143,7 +142,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <iconify-icon icon="mdi:source-commit" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">Update Problems</p>
@@ -159,7 +158,7 @@
         <li class="p-4 flex items-center hover:bg-gray-200 rounded">
           <b class="mr-4 w-2 h-2 bg-blue-500 rounded-full"></b>
           <label class="mr-4 flex items-center"><input type="checkbox" /></label>
-          <i class="mr-4 fas fa-fw fa-lg fa-code-commit text-orange-500"></i>
+          <iconify-icon icon="mdi:source-commit" width="1em" height="1em" inline="false" class="mr-4 text-orange-500"></iconify-icon>
           <div class="mr-4 flex-1">
             <p class="text-xs text-gray-600 leading-tight">Repo Parent/Repo <i class="not-italic opacity-75">#12345</i></p>
             <p class="text-lg font-bold leading-tight">Unable to install application into system folder</p>
@@ -178,6 +177,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+  <script src="https://unpkg.com/iconify-icon/dist/iconify-icon.min.js"></script>
   <script>
     $(function(){
       $('.list-issues-filter a').on('click', function(e){
