@@ -2,7 +2,6 @@
 
 * [**Wrapped**](https://craigerskine.github.io/wrapped/)
 * **Prototypes**
-  * [Kiesel - Order Sheet](https://craigerskine.github.io/prototypes/kiesel/order-sheet/)
   * OpenEmu
     * [Application UI](https://craigerskine.github.io/prototypes/openemu/ui/)
     * [Release Notes](https://craigerskine.github.io/prototypes/openemu/release-notes/)
